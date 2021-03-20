@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    Button-->
+    <style name="ButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+<!--    Text Large-->
+    <style name="TextStyle_Large" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+<!--    Text Medium-->
+    <style name="TextStyle_Medium" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+<!--    Text Small-->
+    <style name="TextStyle_Small" parent="@android:style/TextAppearance">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">@color/black</item>
+<!--        <item name="android:textSize">15sp</item>-->
+    </style>
+
+<!--    OTP Edittext-->
+    <style name="otp_button" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/round_bg</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="bottom_appbar" parent="Theme.MaterialComponents">
+        <item name="android:background">@color/colorSecondary</item>
+    </style>
+
+</resources>

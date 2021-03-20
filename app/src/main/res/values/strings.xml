@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MyWallet</string>
+
+    <!--    Splash and Login Screen-->
+    <string name="welcome_to_the">Welcome to the</string>
+    <string name="smart_wallet_app">Smart Wallet App</string>
+    <string name="about_app1">Keep and manage all your</string>
+    <string name="about_app2">bank and discount cards</string>
+    <string name="about_app3">in one App</string>
+    <string name="no_account">Do not have an account yet?</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="send_code_text">We will send a code to your phone number to reset password.</string>
+    <string name="send_code">Send Code</string>
+    <string name="phone_verification">Phone verification</string>
+    <string name="enter_code">Please enter the 4-digit code sent at</string>
+    <string name="ph_number">9876543214</string>
+
+    <!--    Signup and Profile Screen-->
+    <string name="terms_and_service1">I agree to the</string>
+    <string name="terms_and_service2">Terms and Service</string>
+    <string name="terms_and_service3">and</string>
+    <string name="terms_and_service4">Privacy and Policy</string>
+    <string name="profile_form_title">Introduce yourself please</string>
+    <string name="fname">First name</string>
+    <string name="lname">Last name</string>
+    <string name="email">Email</string>
+
+
+    <!--    Button-->
+    <string name="btn_signin">Sign in</string>
+    <string name="sign_up"> Sign up</string>
+    <string name="proceed">Proceed</string>
+    <string name="btn_continue">Continue</string>
+</resources>

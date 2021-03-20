@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Login/ Registration Screen-->
+    <dimen name="wallet_size">150dp</dimen>
+    <dimen name="linear_layout_paddin_top">30dp</dimen>
+    <dimen name="linear_layout_margin_top">20dp</dimen>
+
+</resources>
