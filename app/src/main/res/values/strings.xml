@@ -25,6 +25,8 @@
     <string name="fname">First name</string>
     <string name="lname">Last name</string>
     <string name="email">Email</string>
+    <string name="profile">Profile</string>
+    <string name="profile_name">Fname Lname</string>
 
 
     <!--    Button-->
