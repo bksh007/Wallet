@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.widget.Button
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import net.qpaysolutions.mywallet.R
 
 class ProfileFormActivity : AppCompatActivity() {
     lateinit var btn_continue : Button

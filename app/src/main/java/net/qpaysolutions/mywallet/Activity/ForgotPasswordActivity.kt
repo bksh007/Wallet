@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
+import net.qpaysolutions.mywallet.R
 
 class ForgotPasswordActivity : AppCompatActivity() {
     lateinit var btn_back: ImageButton

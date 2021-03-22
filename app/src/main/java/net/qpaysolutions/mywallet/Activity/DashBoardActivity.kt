@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,8 @@ import net.qpaysolutions.mywallet.Fragment.AllCardsFragment
 import net.qpaysolutions.mywallet.Fragment.BankCardFragment
 import net.qpaysolutions.mywallet.Fragment.LoyaltyFragment
 import net.qpaysolutions.mywallet.Fragment.ProfileFragment
+import net.qpaysolutions.mywallet.IOnBackPressed
+import net.qpaysolutions.mywallet.R
 
 class DashBoardActivity : AppCompatActivity() {
     lateinit var bottomNavigationView : BottomNavigationView
@@ -27,15 +29,15 @@ class DashBoardActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnNavigationItemSelectedListener{
             when(it.itemId){
-                R.id.menu_profile-> {
+                R.id.menu_profile -> {
                     val fragment =
                         ProfileFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
+                    supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName()).addToBackStack("my_fragment")
                         .commit()
                     return@setOnNavigationItemSelectedListener true
                 }
 
-                R.id.menu_bank_cards-> {
+                R.id.menu_bank_cards -> {
                     val fragment =
                         BankCardFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
@@ -43,7 +45,7 @@ class DashBoardActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
 
-                R.id.menu_loyalty_card-> {
+                R.id.menu_loyalty_card -> {
                     val fragment =
                         LoyaltyFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
@@ -51,7 +53,7 @@ class DashBoardActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
 
-                R.id.menu_all_cards-> {
+                R.id.menu_all_cards -> {
                     val fragment =
                         AllCardsFragment()
                     supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
@@ -62,7 +64,15 @@ class DashBoardActivity : AppCompatActivity() {
             false
 
         }
+
     }
 
-
+    override fun onBackPressed() {
+        val fragment =
+            this.supportFragmentManager.findFragmentById(R.id.container)
+        (fragment as? IOnBackPressed)?.onBackPressed()?.not()?.let {
+            super.onBackPressed()
+        }
+        super.onBackPressed()
+    }
 }

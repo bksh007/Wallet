@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWallet">
-        <activity android:name=".DashBoardActivity"></activity>
-        <activity android:name=".ProfileFormActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".PhoneVerificationActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".Activity.DashBoardActivity"></activity>
+        <activity android:name=".Activity.ProfileFormActivity" />
+        <activity android:name=".Activity.SignupActivity" />
+        <activity android:name=".Activity.PhoneVerificationActivity" />
+        <activity android:name=".Activity.ForgotPasswordActivity" />
+        <activity android:name=".SignIn.SignInActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Activity.MainActivity" />
     </application>
 
 </manifest>

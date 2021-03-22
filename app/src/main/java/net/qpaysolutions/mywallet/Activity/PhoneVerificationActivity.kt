@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import net.qpaysolutions.mywallet.R
 
 class PhoneVerificationActivity : AppCompatActivity() {
     lateinit var tv_phone : TextView

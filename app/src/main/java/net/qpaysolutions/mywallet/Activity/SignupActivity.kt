@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
+import net.qpaysolutions.mywallet.R
 
 class SignupActivity : AppCompatActivity() {
     lateinit var til_phone : TextInputLayout

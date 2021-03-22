@@ -11,7 +11,7 @@
         android:layout_gravity="start"
         android:src="@drawable/ic_arrow_back"
         tools:ignore="MissingConstraints"
-        android:background="@color/colorSecondary"
+        android:background="@android:color/transparent"
         android:paddingLeft="10dp"
         android:onClick="btn_back"
         />

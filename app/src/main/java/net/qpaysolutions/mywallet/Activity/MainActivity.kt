@@ -1,10 +1,12 @@
-package net.qpaysolutions.mywallet
+package net.qpaysolutions.mywallet.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import net.qpaysolutions.mywallet.R
+import net.qpaysolutions.mywallet.SignIn.SignInActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var tv_signup: TextView;

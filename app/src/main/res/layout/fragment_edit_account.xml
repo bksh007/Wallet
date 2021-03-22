@@ -4,41 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ProfileFormActivity"
-    android:background="@color/colorSecondary">
+    tools:context=".Fragment.EditAccountFragment">
 
-    <include layout="@layout/button_back"/>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/wallet_size"
-        android:layout_height="@dimen/wallet_size"
-        android:src="@drawable/wallet2"
-        app:layout_constraintEnd_toEndOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/button_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_account" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="save" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/linear_layout_margin_top"
-        android:paddingTop="@dimen/linear_layout_paddin_top"
-        android:background="@drawable/layout_bg"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <TextView
-            style="@style/TextStyle_Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/profile_form_title"
-            android:gravity="center_horizontal"
-            android:paddingBottom="16dp"
-            />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/activity_profile_form_til_fname"
+            android:id="@+id/fragment_edit_account_til_fname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:startIconDrawable="@drawable/ic_person"
@@ -46,7 +44,7 @@
             app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_profile_form_et_fname"
+                android:id="@+id/fragment_edit_account_et_fname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -55,7 +53,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/activity_profile_form_til_lname"
+            android:id="@+id/fragment_edit_account_til_lname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
@@ -63,7 +61,7 @@
             app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_profile_form_et_lname"
+                android:id="@+id/fragment_edit_account_et_lname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -71,7 +69,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/activity_signup_til_email"
+            android:id="@+id/fragment_edit_account_til_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
@@ -79,21 +77,45 @@
             app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/activity_profile_form_et_email"
+                android:id="@+id/fragment_edit_account_et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="@string/email"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/activity_profile_form_btn_continue"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_edit_account_til_phonenumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_continue"
-            android:layout_marginTop="16dp"
-            />
+            app:boxBackgroundColor="@color/white"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:errorIconDrawable="@null">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_edit_account__et_phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="@string/phone_number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_edit_account_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic__lock"
+            app:errorIconDrawable="@null">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_edit_account_et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/password"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
