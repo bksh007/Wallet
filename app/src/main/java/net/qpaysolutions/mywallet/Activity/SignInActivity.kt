@@ -1,4 +1,4 @@
-package net.qpaysolutions.mywallet.SignIn
+package net.qpaysolutions.mywallet.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
-import net.qpaysolutions.mywallet.Activity.DashBoardActivity
-import net.qpaysolutions.mywallet.Activity.ForgotPasswordActivity
 import net.qpaysolutions.mywallet.R
 
 class SignInActivity : AppCompatActivity() {

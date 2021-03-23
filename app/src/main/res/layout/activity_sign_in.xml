@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn.SignInActivity"
+    tools:context=".Activity.SignInActivity"
     android:background="@color/colorSecondary">
 
     <include
@@ -76,6 +76,7 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_signin"
             android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

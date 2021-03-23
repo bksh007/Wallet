@@ -1,12 +1,17 @@
 package net.qpaysolutions.mywallet.Activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
+import net.qpaysolutions.mywallet.Database.RegisterDatabase
+import net.qpaysolutions.mywallet.Database.RegisterDatabaseDao
+import net.qpaysolutions.mywallet.Database.RegisterEntity
 import net.qpaysolutions.mywallet.R
+import org.jetbrains.anko.doAsync
+import kotlin.concurrent.thread
+import android.widget.Toast.makeText as toastMakeText
 
 class SignupActivity : AppCompatActivity() {
     lateinit var til_phone : TextInputLayout
@@ -30,14 +35,36 @@ class SignupActivity : AppCompatActivity() {
         et_phone = findViewById(R.id.activity_signup_et_phone)
         et_password = findViewById(R.id.activity_signup_et_password)
 
+
         btn_signup.setOnClickListener {
             if (!validateNum() or !validatePass()){
                 return@setOnClickListener
             }else if (!checkbox.isChecked){
-                Toast.makeText(this, "Check the terms and conditions", Toast.LENGTH_SHORT).show()
+                toastMakeText(this, "Check the terms and conditions", Toast.LENGTH_SHORT).show()
             }else{
-                val intent = Intent(this, ProfileFormActivity:: class.java)
-                startActivity(intent)
+//                creating user entity
+                var registerEntity = RegisterEntity(
+                    phoneNumber = et_phone.text.toString(),
+                    password = et_password.text.toString()
+                )
+
+
+                var registerDatabase : RegisterDatabase = RegisterDatabase.getInstance(context = applicationContext)
+                val registerDatabaseDao = registerDatabase.registerDatabaseDao
+
+                doAsync {
+                    registerDatabaseDao.insert(registerEntity)
+                    Toast.makeText(applicationContext, "Register successful.", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+//                Thread(Runnable {
+//                    registerDatabaseDao.insert(registerEntity)
+//                    Toast.makeText(applicationContext, "Register successful.", Toast.LENGTH_SHORT)
+//                        .show()
+//                })
+
+
             }
         }
     }
