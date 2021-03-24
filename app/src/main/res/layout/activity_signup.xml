@@ -113,6 +113,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
             android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

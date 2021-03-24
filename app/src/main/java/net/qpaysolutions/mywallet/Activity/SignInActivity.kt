@@ -6,7 +6,10 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
+import net.qpaysolutions.mywallet.Database.RegisterDatabase
+import net.qpaysolutions.mywallet.Database.RegisterEntity
 import net.qpaysolutions.mywallet.R
+import net.qpaysolutions.mywallet.ViewModel
 
 class SignInActivity : AppCompatActivity() {
     lateinit var btn_signin : Button
@@ -33,18 +36,26 @@ class SignInActivity : AppCompatActivity() {
         et_phone = findViewById(R.id.et_phone)
         et_password = findViewById(R.id.et_password)
 
-//        ph_number = til_number.editText?.text.toString()
-//        password = til_password.editText?.text.toString()
-
         btn_signin.setOnClickListener {
+            val phone = et_phone.text.toString()
+            val password = et_password.text.toString()
+
+            val user = RegisterEntity(0, phone, password)
+
+            val userDao = RegisterDatabase.getInstance(getApplication())?.registerDatabaseDao
+            var userPhone=userDao?.getUser(user.phoneNumber)
+            var userPassword=userDao?.getUserPass(user.password)
+
             if (!validateNum() or !validatePass()){
                 return@setOnClickListener
             }
-            Toast.makeText(this, "phone = "+ et_phone.text  + "\n"+
-                    "password = "+ et_password.text, Toast.LENGTH_SHORT).show()
-            var intent = Intent(this, DashBoardActivity::class.java)
-            startActivity(intent)
-            finish()
+
+            if (phone.equals(userPhone) && password.equals(userPassword)){
+                var intent = Intent(this, DashBoardActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }
 
         forgot_password.setOnClickListener {

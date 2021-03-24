@@ -9,8 +9,9 @@ import net.qpaysolutions.mywallet.Database.RegisterDatabase
 import net.qpaysolutions.mywallet.Database.RegisterDatabaseDao
 import net.qpaysolutions.mywallet.Database.RegisterEntity
 import net.qpaysolutions.mywallet.R
+import net.qpaysolutions.mywallet.ViewModel
 import org.jetbrains.anko.doAsync
-import kotlin.concurrent.thread
+import java.lang.Exception
 import android.widget.Toast.makeText as toastMakeText
 
 class SignupActivity : AppCompatActivity() {
@@ -21,6 +22,8 @@ class SignupActivity : AppCompatActivity() {
     lateinit var btn_signup : Button
     lateinit var btn_back : ImageButton
     lateinit var checkbox : CheckBox
+
+//    lateinit var viewModel: ViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,34 +39,28 @@ class SignupActivity : AppCompatActivity() {
         et_password = findViewById(R.id.activity_signup_et_password)
 
 
+
         btn_signup.setOnClickListener {
+            val phone = et_phone.text.toString()
+            val password = et_password.text.toString()
+
             if (!validateNum() or !validatePass()){
                 return@setOnClickListener
             }else if (!checkbox.isChecked){
                 toastMakeText(this, "Check the terms and conditions", Toast.LENGTH_SHORT).show()
             }else{
-//                creating user entity
-                var registerEntity = RegisterEntity(
-                    phoneNumber = et_phone.text.toString(),
-                    password = et_password.text.toString()
-                )
 
-
-                var registerDatabase : RegisterDatabase = RegisterDatabase.getInstance(context = applicationContext)
-                val registerDatabaseDao = registerDatabase.registerDatabaseDao
-
-                doAsync {
-                    registerDatabaseDao.insert(registerEntity)
-                    Toast.makeText(applicationContext, "Register successful.", Toast.LENGTH_SHORT)
-                        .show()
+                val user = RegisterEntity(0,phone, password)
+                val userDao = RegisterDatabase.getInstance(getApplication())?.registerDatabaseDao
+                try {
+                    doAsync {
+                        userDao?.insertUser(user)
+                    }
+                    var data = userDao?.getUser(user.phoneNumber)
+                    println("data " + data.toString())
+                } catch (e: Exception) {
+                    e.printStackTrace()
                 }
-
-//                Thread(Runnable {
-//                    registerDatabaseDao.insert(registerEntity)
-//                    Toast.makeText(applicationContext, "Register successful.", Toast.LENGTH_SHORT)
-//                        .show()
-//                })
-
 
             }
         }

@@ -13,6 +13,12 @@ data class RegisterEntity(
     @ColumnInfo(name = "phone_number")
     var phoneNumber: String,
 
-    @ColumnInfo(name = "password_text")
+    @ColumnInfo(name = "password")
     var password: String
-)
+
+
+) {
+    override fun toString(): String {
+        return "RegisterEntity(userId=$userId, phoneNumber='$phoneNumber', password='$password')"
+    }
+}
